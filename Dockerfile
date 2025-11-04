@@ -1,12 +1,10 @@
-FROM eclipse-temurin:17-jdk-alpine
+FROM amazoncorretto:17.0.8-alpine3.18
     
 EXPOSE 8080
-
-RUN ls 
-
+ 
 ENV APP_HOME /usr/src/app
 
-COPY app/*.jar $APP_HOME/app.jar
+COPY target/*.jar $APP_HOME/app.jar
 
 WORKDIR $APP_HOME
 
